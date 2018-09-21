@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>提交成功</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="./hs_css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./hs_css/pub.css" type="text/css">
+    <script type="text/javascript" src="./tpl/static/tpl/com/js/js/jquery-1.8.3.js"></script>
+</head>
+
+<body>
+
+    <div id="submitFail">
+        <div class='fail-con'>
+            <div  class="sub-fail" >
+                <div></div>
+            </div>
+        </div>
+        <div class="fail-text">
+                您已经达到当天提交次数上线，明天再试试吧！
+        </div>
+        <div class="guanbi">
+            <input type="button" value="好的" id="fanhui1">
+        </div>
+    </div>
+    <style>
+        #submitFail {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        #submitFail .fail-con {
+            width: 100%;
+        }
+
+        #submitFail .fail-con .sub-fail {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+            background-color: #fff ;
+        }
+
+        #submitFail .fail-con .sub-fail div {
+            position: absolute;
+            background-image: url(./hs_img/wancheng2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            
+        }
+        #submitFail .fail-text{
+            width: 100%;
+            line-height: 1.5;
+            font-size: 16px;
+            color: #333;
+            padding: 28px 0;
+        }
+        #submitFail  .guanbi{
+            width: 100%;
+        }
+        #submitFail  .guanbi  #fanhui1{
+            width: 140px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 1.5;
+            outline: none;
+            border: none;
+            color: #333;
+            background-color:#ffd422;
+        }
+    </style>
+
+</body>
+
+</html>

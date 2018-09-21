@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>语音助手</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="./tpl/static/tpl/com/css/hs_css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./tpl/static/tpl/com/css/hs_css/pub.css" type="text/css">
+    <style type="text/css">
+        @keyframes yuying1 {
+            0% {
+                height: 0%;
+            }
+            20% {
+                height: 50%;
+            }
+            50% {
+                height: 100%;
+            }
+            80% {
+                height: 50%;
+            }
+            100% {
+                height: 0%;
+            }
+        }
+
+        * {
+            margin: 0;
+        }
+
+
+
+
+        #container {
+            min-height: 100vh;
+            min-width: 100vw;
+            display: flex;
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: rgba(0, 0, 0, .1);
+        }
+
+        #timetext {
+            border: none;
+            outline: none;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            font-size: 26px;
+            text-align: center;
+            background-color: transparent;
+        }
+
+        .radio-box {
+            width: 200px;
+            height: 50px;
+            /* align-self: flex-start; */
+            /* margin: 200px auto; */
+        }
+
+        #container #one {
+            animation: yuying1 0.6s infinite 0.1s;
+            -webkit-animation: yuying1 0.6s infinite 0.1s;
+        }
+
+        #container .end-radio {
+            width: 200px;
+            height: 40px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            outline: none;
+            background-color: #2c73fc;
+            text-align: center;
+        }
+
+        #container #two {
+            animation: yuying1 0.6s infinite 0.2s;
+            -webkit-animation: yuying1 0.6s infinite 0.2s;
+        }
+
+        #container #three {
+            animation: yuying1 0.6s infinite 0.3s;
+            -webkit-animation: yuying1 0.6s infinite 0.3s;
+        }
+
+        #container #four {
+            animation: yuying1 0.6s infinite 0.4s;
+            -webkit-animation: yuying1 0.6s infinite 0.4s;
+        }
+
+        #container #five {
+            animation: yuying1 0.6s infinite 0.5s;
+            -webkit-animation: yuying1 0.6s infinite 0.5s;
+        }
+
+        #one,
+        #two,
+        #three,
+        #four,
+        #five {
+            width: 6px;
+            height: 100%;
+            margin-left: 10px;
+            border-radius: 50px;
+            background-color: #999;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <input type="text" id="timetext" value="00时00分00秒" readonly>
+        <br>
+        <div class="radio-box">
+            <div id="three"></div>
+            <div id="one"></div>
+            <div id="three"></div>
+            <div id="two"></div>
+            <div id="five"></div>
+            <div id="three"></div>
+            <div id="two"></div>
+            <div id="five"></div>
+            <div id="four"></div>
+        </div>
+        <input type="text" class="end-radio" value="结束录音">
+    </div>
+
+    </div>
+    <script>
+        //初始化变量
+        var hour, minute, second; //时 分 秒
+        hour = minute = second = 0; //初始化
+        var millisecond = 0; //毫秒
+        var int;
+        start();
+
+        function start() {
+            int = setInterval(timer, 50); //每隔50毫秒执行一次timer函数
+        }
+        //计时函数
+        function timer() {
+            millisecond = millisecond + 50;
+            if (millisecond >= 1000) {
+                millisecond = 0;
+                second = second + 1;
+            }
+            if (second >= 60) {
+                second = 0;
+                minute = minute + 1;
+            }
+
+            if (minute >= 60) {
+                minute = 0;
+                hour = hour + 1;
+            }
+            document.getElementById('timetext').value = second + '秒';
+        }
+    </script>
+</body>
+
+</html>

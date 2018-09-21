@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        个人中心
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="./hs_css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./hs_css/pub.css" type="text/css">
+</head>
+
+<body>
+    <!-- user center wrap -->
+    <div id="userCenterWrap" class="text-off">
+        <!-- header -->
+        <header id="userDetailHeader">
+            <h1>个人中心</h1>
+        </header>
+        <!--user center top -->
+        <div id="userCenterTop">
+            <div class="user">
+                <span class="avatar">
+                    <img src="./hs_img/avatar.jpg" id="userPhoto1">
+                </span>
+                <div class="user-name">
+                    <p class="name" id="userName1">游
+                        <span class="text-spacer"></span>客</p>
+                    <p class="phone" id="userPhone1">未登录</p>
+                </div>
+            </div>
+            <a href="./hsCourt_infoUser.html" class="complete-user-info mob_1px" id="completeInfo">
+                <p class="enter-info-btn">
+                    完善资料
+                </p>
+            </a>
+        </div>
+        <!-- userDtail core-enter -->
+        <nav id='core-enter'>
+            <a href="./hsCourt_consultSus.html" class="label-act mob_1px_b" id="susConsultBtn">
+                <div class="act-left" id="">
+                    <div class="icon-sus">
+                        <span></span>
+                    </div>
+                    <div class="title">
+                        <h1>已完成</h1>
+                    </div>
+                </div>
+
+                <div class="act-right">
+                    <span class="icon-right"></span>
+                </div>
+            </a>
+            <a href="./hsCourt_consultFail.html" class="label-act mob_1px_b" id="toSolveBtn">
+                <div class="act-left">
+                    <div class="icon-to-solve">
+                        <span></span>
+                    </div>
+                    <div class="title">
+                        <h1>待解决</h1>
+                    </div>
+                </div>
+
+                <div class="act-right">
+                    <span class="icon-right"></span>
+                </div>
+            </a>
+            <a href="./hsCourt_consultAll.html" class="label-act mob_1px_b" id="allBtn">
+                <div class="act-left">
+                    <div class="icon-all">
+                        <span></span>
+                    </div>
+                    <div class="title">
+                        <h1>全部咨询</h1>
+                    </div>
+                </div>
+
+                <div class="act-right">
+                    <span class="icon-right"></span>
+                </div>
+            </a>
+        </nav>
+        <!-- commenNav -->
+        <div id="commenNav" class="mob_1px_t">
+            <a id="leave" href="./hsCourt_listJudge.html" class="commenNav-item">
+                <span class="icon-judge"></span>
+                <p class="">法官列表</p>
+            </a>
+            <a id="leave" href="./hsCourt_centerUser.html" class="commenNav-item">
+                <span class="icon-user"></span>
+                <p class="active">个人中心</p>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.querySelector('#userCenterWrap').classList.add('move-edge-r');
+        document.querySelector('#userCenterWrap').classList.add('right-in');
+    </script>
+</body>
+
+
+</html>

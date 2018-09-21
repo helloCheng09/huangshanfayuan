@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        已完成详情
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="./hs_css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./hs_css/pub.css" type="text/css">
+</head>
+
+<body>
+    <!-- detail sus wrap -->
+    <div id="detailSus" class="text-off">
+        <!-- consult successfully detail -->
+        <div id="conSusDetail">
+            <header id="conSusDetHeader">
+                <a href="./hsCourt_consultSus.html" class="icon-left-box" id="backUserDet6">
+                    <span class="icon-left"></span>
+                </a>
+                <h1 id="detailSusHeader">已完成详情</h1>
+            </header>
+            <div id="susDetTop">
+                <div class="judge-avatar">
+                    <img src="./hs_img/faguan1.png" id="judgeAvatar1">
+                </div>
+                <div class="judge-intro">
+                    <h1 class="judge-name" id="judgeName1">法官-甲</h1>
+                    <p class="judge-edu" id="judgeEdu1">
+                        这里是法官的介绍。 这里是法官的介绍。 这里是法官的介绍。 这里是法官的介绍。 这里是法官的介绍。 这里是法官的介绍。 这里是法官的介绍。
+                    </p>
+                </div>
+            </div>
+            <div id="susConsultCon">
+                <h3>咨询内容</h3>
+                <div class="main-content">
+                    <p>这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。这里展示咨询内容文字、图片、语音。</p>
+                    <p>
+                        <img class="susConImgs" src="./hs_img/zixun1.png">
+                        <img class="susConImgs" src="./hs_img/zixun2.png">
+                    </p>
+                </div>
+
+                <script>
+                    var oImg1 = document.getElementsByClassName('susConImgs');
+                    var len = oImg1.length;
+                    if (len == 1) {
+                        for (var i = 0; i < len; i++) {
+                            oImg1[i].style.width = '100%';
+                        }
+                    } else if (len == 2) {
+                        for (var i = 0; i < len; i++) {
+                            oImg1[i].style.width = '49%';
+                        }
+                    } else if (len >= 3) {
+                        for (var i = 0; i < len; i++) {
+                            oImg1[i].style.width = '32%';
+                        }
+                    }
+                </script>
+
+                <div class="con-audio-box">
+
+                    <button id="btnPlay" class="btn-play">
+                        <span class="icon-huatong"></span>
+                        开始录音
+                    </button>
+                </div>
+            </div>
+
+            <div id="reConsultCon">
+                <h3>回复内容</h3>
+                <div class="main-content">
+                    <p>这里展示回复内容文字、图片、语音。这里展示回复内容文字、图片、语音。这里展示回复内容文字、图片、语音。这里展示回复内容文字、图片、语音。</p>
+                    <p>
+                        <img class="reConImg" src="./hs_img/faguan1.png">
+                        <img class="reConImg" src="./hs_img/zixun3.png">
+                    </p>
+                </div>
+                <script>
+                    var oImg2 = document.getElementsByClassName('reConImg');
+                    var len = oImg2.length;
+                    if (len == 1) {
+                        for (var i = 0; i < len; i++) {
+                            oImg2[i].style.width = '100%';
+                        }
+                    } else if (len == 2) {
+                        for (var i = 0; i < len; i++) {
+                            oImg2[i].style.width = '49%';
+                        }
+                    } else if (len >= 3) {
+                        for (var i = 0; i < len; i++) {
+                            oImg2[i].style.width = '32%';
+                        }
+                    }
+                </script>
+                <div class="re-audio-box">
+                    <button id="btnPlay" class="btn-play">
+                        <span class="icon-huatong"></span>
+                        播放录音
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var oBtnPlays = document.getElementsByClassName('btn-play');
+        var oHuatongs = document.getElementsByClassName('icon-huatong');
+
+        var len2 = oBtnPlays.length;
+        var flagArry = [];
+        console.log('有按钮:' + len2)
+        for (var i = 0; i < len2; i++) {
+            (function (i) {
+                flagArry[i] = 0;
+                oBtnPlays[i].addEventListener('touchstart', function () {
+                    if (flagArry[i] == 0) {
+                        this.classList.add('active');
+                        // oHuatongs[i].classList.add('');
+                        console.log(oHuatongs[i])
+                        this.innerHTML = '<span class="icon-huatong bolang"></span> 结束录音';
+                        flagArry[i] = 1;
+                        console.log('添加active');
+                    } else if (flagArry[i] == 1) {
+                        console.log('取消active');
+                        this.classList.remove('active');
+                        // oHuatongs[i].classList.remove('bolang');
+                        this.innerHTML = '<span class="icon-huatong"></span> 开始录音';
+                        flagArry[i] = 0;
+                        console.log(oHuatongs[i])
+                    }
+                }, false)
+            }(i))
+        }
+        document.querySelector('#detailSus').classList.add('move-edge-l');
+        document.querySelector('#detailSus').classList.add('left-in');
+    </script>
+</body>
+
+
+</html>
